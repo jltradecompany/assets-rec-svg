@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Assistente MARINA</title>
+
+<style>
+* { margin:0; padding:0; box-sizing:border-box; }
+
+body {
+  font-family: Arial, sans-serif;
+  background:#f5f5f5;
+}
+
+/* DOCK */
+#dockISA {
+  position: fixed;
+  top:20px;
+  right:20px;
+  width:420px;
+  height:calc(100vh - 40px);
+  background:#1626c7;
+  border-radius:20px;
+  border:2px solid #fff;
+  display:flex;
+  flex-direction:column;
+  overflow:hidden;
+}
+
+/* HEADER */
+.dock-header {
+  height:60px;
+  background:#000;
+  color:#fff;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:0 20px;
+}
+
+/* LOGO */
+.dock-logo {
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  padding:16px 0 8px;
+}
+
+.dock-logo svg {
+  width:140px;
+  max-width:60%;
+  height:auto;
+}
+
+/* VIDEO */
+.video-wrapper {
+  position:relative;
+  width:100%;
+  padding-top:56.25%;
+  border-radius:20px;
+  overflow:hidden;
+}
+
+.video-wrapper iframe {
+  position:absolute;
+  width:100%;
+  height:100%;
+  border:none;
+}
+
+/* CTA */
+.dock-cta {
+  text-align:center;
+  padding:20px;
+}
+
+.dock-cta a {
+  background:linear-gradient(135deg,#f7b641,#e0a032);
+  padding:14px 28px;
+  border-radius:30px;
+  font-weight:bold;
+  cursor:pointer;
+  display:inline-block;
+}
+
+/* AGENTE */
+#agentWrapper {
+  display:none;
+  flex:1;
+}
+
+#agentWrapper iframe {
+  width:100%;
+  height:100%;
+  border:none;
+}
+</style>
+</head>
+
+<body>
+
+<div id="dockISA">
+
+<div class="dock-header">
+<span>Assistente MARINA</span>
+<button>×</button>
+</div>
+
+<!-- LOGO -->
+<div class="dock-logo">
+<svg viewBox="0 0 656 288">
+<g>
+<path style="fill:#ffffff"
+d="m 114.47786,268.94677 c -0.5014,-1.34572 -5.5431,-16.08046 -11.20378,-32.74385 ... (continua exatamente igual ao seu SVG completo, apenas com fill branco)"/>
+</g>
+</svg>
+</div>
+
+<!-- VIDEO -->
+<div class="video-wrapper" id="videoWrapper">
+<iframe src="https://fast.wistia.net/embed/iframe/vwy77rnhda"></iframe>
+</div>
+
+<!-- CTA -->
+<div class="dock-cta">
+<a id="ctaOrcamento">Solicitar Orçamento</a>
+</div>
+
+<!-- AGENTE -->
+<div id="agentWrapper">
+<iframe src="https://agent.jotform.com/019c3d9a72d676f5bfe48cc2bbef4dec8a43"></iframe>
+</div>
+
+</div>
+
+<script>
+const cta = document.getElementById("ctaOrcamento");
+const videoWrapper = document.getElementById("videoWrapper");
+const agentWrapper = document.getElementById("agentWrapper");
+const ctaContainer = document.querySelector(".dock-cta");
+
+cta.onclick = () => {
+  videoWrapper.style.display = "none";
+  ctaContainer.style.display = "none";
+  agentWrapper.style.display = "block";
+};
+</script>
+
+</body>
+</html>
